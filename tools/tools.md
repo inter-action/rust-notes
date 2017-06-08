@@ -1,0 +1,1 @@
+* rustup: https://wiki.rust-china.org/multirust

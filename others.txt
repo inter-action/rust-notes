@@ -1,0 +1,30 @@
+libs:
+
+    command line parser:
+        extern crate clap;
+
+    logging:
+
+        extern crate env_logger;
+
+    serialization:
+        https://serde.rs/
+        
+    lazy static
+        https://github.com/rust-lang-nursery/lazy-static.rs
+
+    test:
+        https://github.com/BurntSushi/quickcheck
+
+links:
+    http://rustbyexample.com/std_misc/channels.html
+
+todo:
+
+    #[derive(Clone)], Copy
+
+    collections::borrow::Cow, Copy on Write
+    
+
+    std::sync::mpsc::Sender
+        用于什么场合？ 线程之间的数据交互？

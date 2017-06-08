@@ -1,0 +1,11 @@
+// for with IntoIterator
+    pub fn is_permitted_from_str<'a, I>(required_perm: &str, assigned_perms: I) -> i32
+        where I: IntoIterator<Item = &'a str>
+    {
+        let required_permission = Permission::new(&required_perm);
+        for assigned in assigned_perms {
+            // ...blah..
+        }
+        return 0;
+    }
+
