@@ -9,3 +9,32 @@
         return 0;
     }
 
+// from path
+
+    fn file_double<P: AsRef<Path>>(file_path: P) -> Result<i32, CliError> {
+        let mut file = try!(File::open(file_path));
+        let mut contents = String::new();
+        try!(file.read_to_string(&mut contents));
+        let n: i32 = try!(contents.trim().parse());
+        Ok(2 * n)
+    }
+
+
+// pattern matching with '*'
+    // https://rustbyexample.com/custom_types/enum/testcase_linked_list.html
+    // 注意这个LinkList的实现, 还有 use + enum 的配合使用
+    // Return the length of the list
+    fn len(&self) -> u32 {
+        // `self` has to be matched, because the behavior of this method
+        // depends on the variant of `self`
+        // `self` has type `&List`, and `*self` has type `List`, matching on a
+        // concrete type `T` is preferred over a match on a reference `&T`
+        match *self {
+            // Can't take ownership of the tail, because `self` is borrowed;
+            // instead take a reference to the tail
+            Cons(_, ref tail) => 1 + tail.len(),
+            // Base Case: An empty list has zero length
+            Nil => 0
+        }
+    }
+

@@ -36,3 +36,10 @@
     * 在这个struct中需要包括的变量到底是 reference(&), mutable reference(&mut), move. 编译器会根据closure的引用变量的方式来判断，来选择最灵活的。比如 closure 只有一个 `x+y` 代码， 那么 x y 都是 reference, 如果后面有 *x=3, 那么x将是 mutable reference. 如果需要将 closure 返回, 则一般需要 move 关键字, move会将所有的变量以move的形式定义struct
     * 由于trait（Fn, FnOnce, FnMut）是unsized, 所以不能在rust中传递, 只能用box封装, 或者使用trait object, 及&trait or Box<trait>, to make it pointer type.
     * 
+
+
+
+
+## links
+
+[rust attributes refs](https://doc.rust-lang.org/reference/attributes.html)

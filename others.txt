@@ -18,13 +18,15 @@ libs:
 
 links:
     http://rustbyexample.com/std_misc/channels.html
-
+    idiomatic-rust - https://github.com/mre/idiomatic-rust
 todo:
+    done:
+        collections::borrow::Cow, Copy on Write
 
-    #[derive(Clone)], Copy
+    pending:
+        #[derive(Clone)], Copy
+        https://github.com/brson/error-chain
+        std::sync::mpsc::Sender
+            用于什么场合？ 线程之间的数据交互？
 
-    collections::borrow::Cow, Copy on Write
-    
 
-    std::sync::mpsc::Sender
-        用于什么场合？ 线程之间的数据交互？
