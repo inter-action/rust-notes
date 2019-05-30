@@ -1,6 +1,17 @@
 
 # error handling
 
+rust 中 error handling一直是一个比较复杂的主题, 不管是那个语言, 其实错误处理都是最麻烦的部分. 只不过其他的语言对错误的处理的机制太过简单, 而隐藏了问题的复杂性. 而rust提供了很robust的错误处理机制供你去选择.
+
+error handling 个人还是推荐直接用 `error-chain` 这个库来做, 这种方式比较成熟, 其他都太naive了. 不过还是具体看场景.
+
+语言中错误处理你需要面临的抉择
+
+* 程序要不要立即挂掉 (yes-> panic)
+* 如果是可恢复的错误, 你需要返回对应的错误类型, 供caller去处理
+    * 需不需要堆栈信息
+    * 需不需要caller对错误类型做识别
+
 
 * error pattern
 
@@ -24,10 +35,8 @@
     }
 
 
-* error_chain mod:
-    * http://brson.github.io/2016/11/30/starting-with-error-chain
-    * https://github.com/brson/error-chain
-    * 很方便地能把两个error chain 起来， 这样在报错的时候能给更多的context, sample.rs 代码中的 recursion_limit，表示最大的error嵌套的层级数目    
+* error_chain 模块:
+    * https://github.com/CrazyFork/error-chain, 我在自己的仓库有解释
 
 ## links
 * http://blog.burntsushi.net/rust-error-handling/#standard-library-traits-used-for-error-handling
