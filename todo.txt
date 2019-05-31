@@ -1,8 +1,16 @@
 
-todo:
+## todo:
 
-    done:
+done:
 
-    pending:
-        找个时间回顾&整理下里边的内容, 
+pending:
+    找个时间回顾&整理下里边的内容, 
         
+    dyn, trait object, 我理解dyn关键字主要是为了区分 trait object和struct, 具体怎么用, 我还没能完全理解. 尤其是 &dyn Foo 这种, 怎么创建出来的.
+    
+    ```
+    // old => new
+    Box<Foo> => Box<dyn Foo>
+    &Foo => &dyn Foo
+    &mut Foo => &mut dyn Foo
+    ```
